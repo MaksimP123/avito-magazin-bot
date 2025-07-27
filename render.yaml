@@ -1,7 +1,10 @@
 services:
   - type: web
     name: avito-magazin-bot
+    runtime: python
     env: python
-    buildCommand: "pip install -r requirements.txt"
-    startCommand: "python main.py"
-    pythonVersion: 3.10.13
+    buildCommand: pip install -r requirements.txt
+    startCommand: python main.py
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10
